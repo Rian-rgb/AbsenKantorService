@@ -1,0 +1,17 @@
+# FROM openjdk:17-alpine
+#
+# ENV TZ="Asia/Jakarta"
+# RUN date
+#
+# ADD target/*.jar app.jar
+# ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+#
+#
+# EXPOSE 8282
+
+FROM openjdk:11
+LABEL maintainer ="howtodoinjava"
+ADD target/AbsenKantorService-0.0.1-SNAPSHOT.jar AbsenKantorService-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","AbsenKantorService-0.0.1-SNAPSHOT.jar"]
+
+EXPOSE 8282
